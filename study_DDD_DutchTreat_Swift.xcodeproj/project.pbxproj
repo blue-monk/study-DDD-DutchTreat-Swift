@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		52A6FED323DCA46600ACD77C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A6FED223DCA46600ACD77C /* Preview Assets.xcassets */; };
 		52A6FED623DCA46600ACD77C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A6FED423DCA46600ACD77C /* LaunchScreen.storyboard */; };
 		52A6FEE123DCA46600ACD77C /* study_DDD_DutchTreat_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6FEE023DCA46600ACD77C /* study_DDD_DutchTreat_SwiftTests.swift */; };
+		52A6FEED23DCA93B00ACD77C /* Surge in Frameworks */ = {isa = PBXBuildFile; productRef = 52A6FEEC23DCA93B00ACD77C /* Surge */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A6FEED23DCA93B00ACD77C /* Surge in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,9 @@
 			dependencies = (
 			);
 			name = study_DDD_DutchTreat_Swift;
+			packageProductDependencies = (
+				52A6FEEC23DCA93B00ACD77C /* Surge */,
+			);
 			productName = study_DDD_DutchTreat_Swift;
 			productReference = 52A6FEC323DCA46500ACD77C /* study_DDD_DutchTreat_Swift.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 52A6FEBA23DCA46500ACD77C;
+			packageReferences = (
+				52A6FEEB23DCA93B00ACD77C /* XCRemoteSwiftPackageReference "Surge" */,
+			);
 			productRefGroup = 52A6FEC423DCA46500ACD77C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -477,6 +485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52A6FEEB23DCA93B00ACD77C /* XCRemoteSwiftPackageReference "Surge" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jounce/Surge";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52A6FEEC23DCA93B00ACD77C /* Surge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A6FEEB23DCA93B00ACD77C /* XCRemoteSwiftPackageReference "Surge" */;
+			productName = Surge;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		52A6FECA23DCA46500ACD77C /* study_DDD_DutchTreat_Swift.xcdatamodeld */ = {
