@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MemberType: String {
+enum MemberType: String, CaseIterable {
 
     case partyOrganizer
     case secretary
@@ -19,11 +19,13 @@ enum MemberType: String {
         let displayName: String
     }
 
-    private static let _constants = [
-        partyOrganizer : Const(memberType: partyOrganizer, displayName: "主催者"),
-        secretary      : Const(memberType: secretary, displayName: "幹事"),
-        generalMember  : Const(memberType: generalMember, displayName: "一般参加者")
-    ]
+    private static let _constants = EnumMap<MemberType, Const> { type in
+        switch type {
+            case .partyOrganizer: return Const(memberType: partyOrganizer, displayName: "主催者")
+            case .secretary:      return Const(memberType: secretary, displayName: "幹事")
+            case .generalMember:  return Const(memberType: generalMember, displayName: "一般参加者")
+        }
+    }
 }
 
 //MARK: タイプ判定
@@ -46,7 +48,7 @@ extension MemberType {
 extension MemberType {
 
     func displayName() -> String {
-        MemberType._constants[self]!.displayName
+        MemberType._constants[self].displayName
     }
 }
 

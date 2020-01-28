@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Currency {
+enum Currency: CaseIterable {
     
     case JPY
     case USD
@@ -20,21 +20,23 @@ enum Currency {
         let minorUnit: Int
     }
 
-    private static let _constants = [
-        JPY : Const(code: "JPY", sign: "¥", name: "Yen", minorUnit: 0),
-        USD : Const(code: "USD", sign: "$", name: "US Dollar", minorUnit: 2),
-    ]
+    private static let _constants = EnumMap<Currency, Const> { type in
+        switch type {
+            case .JPY: return Const(code: "JPY", sign: "¥", name: "Yen", minorUnit: 0)
+            case .USD: return Const(code: "USD", sign: "$", name: "US Dollar", minorUnit: 2)
+        }
+    }
 }
 
 //MARK: 属性
 extension Currency {
 
     func code() -> String {
-        Currency._constants[self]!.code
+        Currency._constants[self].code
     }
 
     func name() -> String {
-        Currency._constants[self]!.name
+        Currency._constants[self].name
     }
 
     func minorUnit() -> Scale {
@@ -42,6 +44,6 @@ extension Currency {
     }
 
     func minorUnit() -> Int {
-        Currency._constants[self]!.minorUnit
+        Currency._constants[self].minorUnit
     }
 }

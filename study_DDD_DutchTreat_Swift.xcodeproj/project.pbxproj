@@ -62,6 +62,7 @@
 		52AB266823DD4EFF006A6FE1 /* Organizer+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB263723DD4EFF006A6FE1 /* Organizer+Fixture.swift */; };
 		52AB266923DD4EFF006A6FE1 /* PaymentLevelSpecifics+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB263A23DD4EFF006A6FE1 /* PaymentLevelSpecifics+Fixture.swift */; };
 		52AB268B23DD4EFF006A6FE1 /* DrinkingPartyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB266223DD4EFF006A6FE1 /* DrinkingPartyTest.swift */; };
+		52ADF6DB23E07F8800B6351E /* EnumMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADF6DA23E07F8800B6351E /* EnumMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		52AB263723DD4EFF006A6FE1 /* Organizer+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Organizer+Fixture.swift"; sourceTree = "<group>"; };
 		52AB263A23DD4EFF006A6FE1 /* PaymentLevelSpecifics+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentLevelSpecifics+Fixture.swift"; sourceTree = "<group>"; };
 		52AB266223DD4EFF006A6FE1 /* DrinkingPartyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkingPartyTest.swift; sourceTree = "<group>"; };
+		52ADF6DA23E07F8800B6351E /* EnumMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -542,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				5273314C23DDFA8700D53C57 /* numeric */,
+				52ADF6DA23E07F8800B6351E /* EnumMap.swift */,
 			);
 			path = foundation;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				52AB260523DD4EC8006A6FE1 /* DebugSupport.swift in Sources */,
 				52AB261923DD4EC8006A6FE1 /* Accumulatable.swift in Sources */,
 				52AB260B23DD4EC8006A6FE1 /* MemberName.swift in Sources */,
+				52ADF6DB23E07F8800B6351E /* EnumMap.swift in Sources */,
 				52A6FECE23DCA46500ACD77C /* ContentView.swift in Sources */,
 				52AB260823DD4EC8006A6FE1 /* HoldDateTime.swift in Sources */,
 				52AB261023DD4EC8006A6FE1 /* TotalPaymentAmount.swift in Sources */,
