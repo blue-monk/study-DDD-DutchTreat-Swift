@@ -29,15 +29,6 @@ extension MemberPayment {
 //MARK: 加工（non-mutating）
 extension MemberPayment {
 
-    func addingPaymentAmountIfMemberIsPartyOrganizer(additionalAmount: DifferenceAmount) -> Self {
-
-        if member.isNotPartyOrganizer {
-            return self
-        }
-
-        return MemberPayment(id: id, member: member, paymentAmount: paymentAmount + additionalAmount)
-    }
-
     func addingPaymentAmount(_ additionalAmount: DifferenceAmount) -> Self {
         return MemberPayment(id: id, member: member, paymentAmount: paymentAmount + additionalAmount)
     }

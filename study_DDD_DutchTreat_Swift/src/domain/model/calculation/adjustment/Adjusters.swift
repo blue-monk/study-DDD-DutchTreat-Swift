@@ -12,10 +12,13 @@ struct OrganizerSacrificedAdjuster: DifferenceAdjuster {
 
     func adjust(_ difference: DifferenceAmount, in memberPayments: MemberPayments) -> MemberPayments {
 
-        let adjusted = memberPayments
-                .map() { $0.addingPaymentAmountIfMemberIsPartyOrganizer(additionalAmount: difference) }
+        let adjusted = _adjustOne(of: memberPayments, adjustmentAmount: difference, where: \.isPartyOrganizer)
 
-        return MemberPayments(rawMemberPayments: adjusted)
+        guard let adjustedMemberPayment = adjusted else {
+            fatalError("パーティメンバーに主催者がいないみたい。")
+        }
+
+        return memberPayments.replacing(memberPayment: adjustedMemberPayment)
     }
 }
 
