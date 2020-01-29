@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Weight {
+struct Weight: Hashable {
 
     var value: Int
 }
