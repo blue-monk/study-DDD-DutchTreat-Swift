@@ -11,18 +11,18 @@ import Foundation
 struct MemberPayments {
 
     private let _rawMemberPayments: [MemberPayment]
-    private let _currency: Currency
+    private let _billingAmount: BillingAmount
 }
 
 //MARK: 初期化
 extension MemberPayments {
 
-    init(rawMemberPayments: [MemberPayment]) {
+    init(rawMemberPayments: [MemberPayment], billingAmount: BillingAmount) {
 
         assert(!rawMemberPayments.isEmpty, "rawMemberPaymentsが空っぽ")
 
         _rawMemberPayments = rawMemberPayments
-        _currency = _rawMemberPayments.first!.paymentAmount.currency
+        _billingAmount = billingAmount
     }
 }
 
@@ -33,8 +33,7 @@ extension MemberPayments {
 
         let total = _rawMemberPayments
                 .map { $0.paymentAmount }
-                .sum()
-//                .reduce(PaymentAmount.zero(currency: _currency), +)
+                .sum(in: _billingAmount.currency)
 
         return TotalPaymentAmount(amountOfMoney: total.amountOfMoney)
     }
@@ -43,12 +42,8 @@ extension MemberPayments {
 //MARK: Array 拡張
 private extension Array where Element == PaymentAmount {
 
-    func sum() -> Element {
-        reduce(.zero(currency: currencyOnFirst()), +)
-    }
-
-    private func currencyOnFirst() -> Currency {
-        first!.currency                             //TODO: 必ず要素が1つ以上存在する前提。private extension なので問題ない？
+    func sum(in currency: Currency) -> Element {
+        reduce(.zero(currency: currency), +)
     }
 }
 
@@ -81,7 +76,7 @@ extension MemberPayments {
         let range = _range(of: memberPayment)
         rawMemberPayments.replaceSubrange(range, with: [memberPayment])
 
-        return MemberPayments(rawMemberPayments: rawMemberPayments)
+        return MemberPayments(rawMemberPayments: rawMemberPayments, billingAmount: _billingAmount)
     }
 }
 

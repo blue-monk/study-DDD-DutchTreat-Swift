@@ -49,7 +49,7 @@ extension DutchTreatCalculator {
             return MemberPayment(member: member, paymentAmount: roundedAmount)
         }
 
-        return adjustDifference(in: MemberPayments(rawMemberPayments: memberPayments))
+        return adjustDifference(in: MemberPayments(rawMemberPayments: memberPayments, billingAmount: billingAmount))
     }
 
     //MARK: 差額調整
