@@ -55,9 +55,7 @@ extension DutchTreatCalculator {
     //MARK: 差額調整
     func adjustDifference(in memberPayments: MemberPayments) -> MemberPayments {
 
-        let totalPaymentAmount = memberPayments.totalPaymentAmount()
-
-        let difference = billingAmount - totalPaymentAmount;
+        let difference = memberPayments.differenceFromBillingAmount()
         if difference.isZero() {
             return memberPayments;
         }
