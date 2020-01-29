@@ -10,7 +10,7 @@ import Foundation
 
 struct PaymentLevelSpecifics {
 
-    private var weightsByLevel: [PaymentLevel : Weight] = [:]
+    let weightsByLevel: [PaymentLevel : Weight]
 }
 
 //MARK: 初期化
@@ -18,10 +18,13 @@ extension PaymentLevelSpecifics {
 
     init(moreWeight: Weight, standardWeight: Weight, lessWeight: Weight) {
 
-        weightsByLevel[.more] = moreWeight
-        weightsByLevel[.standard] = standardWeight
-        weightsByLevel[.less] = lessWeight
+        var weightsByLevel_ = [PaymentLevel : Weight]()
 
+        weightsByLevel_[.more] = moreWeight
+        weightsByLevel_[.standard] = standardWeight
+        weightsByLevel_[.less] = lessWeight
+
+        weightsByLevel = weightsByLevel_
         _validate()
     }
 

@@ -208,7 +208,7 @@ class DrinkingPartyTest: XCTestCase {
             print("actual=\n\(memberPayments)")
             print("expected=\(expected)")
 
-            XCTAssertTrue(billingAmount == memberPayments.totalPaymemtAmount(), "支払総額が請求金額と同じになっていること")
+            XCTAssertTrue(memberPayments.differenceFromBillingAmount().isZero(), "支払総額が請求金額と同じになっていること")
 
             memberPayments.forEach { (actual) in
 

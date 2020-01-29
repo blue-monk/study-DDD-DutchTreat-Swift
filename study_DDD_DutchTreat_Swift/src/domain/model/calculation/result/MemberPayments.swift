@@ -29,7 +29,11 @@ extension MemberPayments {
 //MARK: 計算
 extension MemberPayments {
 
-    func totalPaymemtAmount() -> TotalPaymentAmount {
+    func differenceFromBillingAmount() -> DifferenceAmount {
+        _billingAmount - totalPaymentAmount();
+    }
+
+    private func totalPaymentAmount() -> TotalPaymentAmount {
 
         let total = _rawMemberPayments
                 .map { $0.paymentAmount }
