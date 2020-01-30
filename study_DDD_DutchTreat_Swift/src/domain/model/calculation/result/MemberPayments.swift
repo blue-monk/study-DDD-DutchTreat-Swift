@@ -84,19 +84,13 @@ extension MemberPayments {
     }
 }
 
-//MARK: 内包する MemberPayment を変更（non-mutating）
+//MARK: ランダムに選択された MemberPayment
 extension MemberPayments {
 
-    func changingPaymentAmountRandomly(additionalAmount: DifferenceAmount) -> Self {
-
-        precondition(!_rawMemberPayments.isEmpty, "空っぽの場合は呼び出さないように制御する")
-
-        let memberPayment = _rawMemberPayments.randomElement()!
-        let changed = memberPayment.addingPaymentAmount(additionalAmount)
-        return replacing(memberPayment: changed)
+    func randomMemberPayment() -> MemberPayment? {
+        _rawMemberPayments.randomElement()
     }
 }
-
 
 //MARK: Sequence 準拠
 extension MemberPayments: Sequence {

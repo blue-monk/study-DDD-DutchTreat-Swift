@@ -184,6 +184,10 @@ class DrinkingPartyTest: XCTestCase {
             (Factor(612, .幹事3_一般5, .全て異値(more: 5, std: 3, less: 1), billingAmount: Decimal(75839), .JPY, .ten,      .harfUp, .assignToOneOfGenaral),   Expected(splitInto: .init(more: 13080, std: 7850, less: 2620),   adjustedTo: .一般, Decimal(-41),     .JPY, note: "10円単位")),
             (Factor(613, .幹事3_一般5, .全て異値(more: 5, std: 3, less: 1), billingAmount: Decimal(75839), .JPY, .hundred,  .harfUp, .assignToOneOfGenaral),   Expected(splitInto: .init(more: 13100, std: 7800, less: 2600),   adjustedTo: .一般, Decimal(139),     .JPY, note: "100円単位")),
 
+            (Factor(621, .幹事3_一般5, .全て異値(more: 5, std: 3, less: 1), billingAmount: Decimal(75839), .JPY, .default,  .harfUp, .assignRandomly),         Expected(splitInto: .init(more: 13076, std: 7845, less: 2615),   adjustedTo: .any, Decimal(1),       .JPY, note: "1円単位")),
+            (Factor(622, .幹事3_一般5, .全て異値(more: 5, std: 3, less: 1), billingAmount: Decimal(75839), .JPY, .ten,      .harfUp, .assignRandomly),         Expected(splitInto: .init(more: 13080, std: 7850, less: 2620),   adjustedTo: .any, Decimal(-41),     .JPY, note: "10円単位")),
+            (Factor(623, .幹事3_一般5, .全て異値(more: 5, std: 3, less: 1), billingAmount: Decimal(75839), .JPY, .hundred,  .harfUp, .assignRandomly),         Expected(splitInto: .init(more: 13100, std: 7800, less: 2600),   adjustedTo: .any, Decimal(139),     .JPY, note: "100円単位")),
+
             //TODO: more
         ]
     }

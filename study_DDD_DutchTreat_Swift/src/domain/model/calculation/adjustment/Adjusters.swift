@@ -36,7 +36,16 @@ struct GenaralMemberSacrificedAdjuster: DifferenceAdjuster {
 struct RandomSacrificedAdjuster: DifferenceAdjuster {
 
     func adjust(_ difference: DifferenceAmount, in memberPayments: MemberPayments) -> MemberPayments {
-        memberPayments.changingPaymentAmountRandomly(additionalAmount: difference)
+
+        let adjusted = memberPayments
+                .randomMemberPayment()?
+                .addingPaymentAmount(difference)
+
+        guard let adjustedMemberPayment = adjusted else {
+            fatalError("パーティメンバーには少なくとも主催者はいるはず")
+        }
+
+        return memberPayments.replacing(memberPayment: adjustedMemberPayment)
     }
 }
 
