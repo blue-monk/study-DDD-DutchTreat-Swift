@@ -38,7 +38,6 @@
 		52AB261523DD4EC8006A6FE1 /* PaymentLevelSpecifics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25E623DD4EC8006A6FE1 /* PaymentLevelSpecifics.swift */; };
 		52AB261623DD4EC8006A6FE1 /* PaymentLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25E723DD4EC8006A6FE1 /* PaymentLevel.swift */; };
 		52AB261723DD4EC8006A6FE1 /* PaymentLevelHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25E823DD4EC8006A6FE1 /* PaymentLevelHolder.swift */; };
-		52AB261823DD4EC8006A6FE1 /* AmountOfMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25EA23DD4EC8006A6FE1 /* AmountOfMoney.swift */; };
 		52AB261923DD4EC8006A6FE1 /* Accumulatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25EB23DD4EC8006A6FE1 /* Accumulatable.swift */; };
 		52AB261A23DD4EC8006A6FE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25EC23DD4EC8006A6FE1 /* Currency.swift */; };
 		52AB261B23DD4EC8006A6FE1 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB25ED23DD4EC8006A6FE1 /* Money.swift */; };
@@ -110,7 +109,6 @@
 		52AB25E623DD4EC8006A6FE1 /* PaymentLevelSpecifics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentLevelSpecifics.swift; sourceTree = "<group>"; };
 		52AB25E723DD4EC8006A6FE1 /* PaymentLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentLevel.swift; sourceTree = "<group>"; };
 		52AB25E823DD4EC8006A6FE1 /* PaymentLevelHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentLevelHolder.swift; sourceTree = "<group>"; };
-		52AB25EA23DD4EC8006A6FE1 /* AmountOfMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountOfMoney.swift; sourceTree = "<group>"; };
 		52AB25EB23DD4EC8006A6FE1 /* Accumulatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accumulatable.swift; sourceTree = "<group>"; };
 		52AB25EC23DD4EC8006A6FE1 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		52AB25ED23DD4EC8006A6FE1 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
@@ -375,7 +373,6 @@
 				52AB25F123DD4EC8006A6FE1 /* rounding */,
 				52AB25EC23DD4EC8006A6FE1 /* Currency.swift */,
 				52AB25ED23DD4EC8006A6FE1 /* Money.swift */,
-				52AB25EA23DD4EC8006A6FE1 /* AmountOfMoney.swift */,
 				52AB25EF23DD4EC8006A6FE1 /* AccumulatableMoney.swift */,
 			);
 			path = foundation;
@@ -662,7 +659,6 @@
 				52AB260923DD4EC8006A6FE1 /* PartyMembers.swift in Sources */,
 				52AB262523DD4EC8006A6FE1 /* Rounding.swift in Sources */,
 				52A6FEC723DCA46500ACD77C /* AppDelegate.swift in Sources */,
-				52AB261823DD4EC8006A6FE1 /* AmountOfMoney.swift in Sources */,
 				52AB261D23DD4EC8006A6FE1 /* AccumulatableMoney.swift in Sources */,
 				52AB261A23DD4EC8006A6FE1 /* Currency.swift in Sources */,
 				52AB261C23DD4EC8006A6FE1 /* Rounder.swift in Sources */,

@@ -10,14 +10,14 @@ import Foundation
 
 struct DifferenceAmount {
 
-    let amountOfMoney: AmountOfMoney
+    let money: Money
 }
 
 //MARK: 初期化
 extension DifferenceAmount {
 
-    init(_ amountOfMoney: AmountOfMoney) {
-        self.amountOfMoney = amountOfMoney
+    init(_ money: Money) {
+        self.money = money
     }
 }
 
@@ -25,6 +25,6 @@ extension DifferenceAmount {
 extension DifferenceAmount {
 
     func isZero() -> Bool {
-        amountOfMoney == AmountOfMoney(Decimal.zero, currency: amountOfMoney.currency)
+        money == Money(Decimal.zero, money.currency)
     }
 }

@@ -10,10 +10,10 @@ import Foundation
 
 struct BillingAmount {
 
-    private let amountOfMoney: AmountOfMoney
+    private let money: Money
 
     var currency: Currency {
-        return amountOfMoney.currency
+        return money.currency
     }
 }
 
@@ -21,7 +21,7 @@ struct BillingAmount {
 extension BillingAmount {
 
     init(_ amount: Decimal, currency: Currency) {
-        amountOfMoney = AmountOfMoney(amount, currency: currency)
+        money = Money(amount, currency)
     }
 }
 
@@ -29,7 +29,7 @@ extension BillingAmount {
 extension BillingAmount {
 
     static func * (lhs: BillingAmount, rhs: Weight) -> PaymentAmount {
-        PaymentAmount(lhs.amountOfMoney * rhs.value)
+        PaymentAmount(lhs.money * rhs.value)
     }
 }
 
@@ -37,11 +37,11 @@ extension BillingAmount {
 extension BillingAmount {
 
     static func - (lhs: BillingAmount, rhs: TotalPaymentAmount) -> DifferenceAmount {
-        DifferenceAmount(lhs.amountOfMoney - rhs.amountOfMoney)
+        DifferenceAmount(lhs.money - rhs.money)
     }
 
     static func == (lhs: BillingAmount, rhs: TotalPaymentAmount) -> Bool {
-        lhs.amountOfMoney == rhs.amountOfMoney
+        lhs.money == rhs.money
     }
 }
 
@@ -50,7 +50,7 @@ extension BillingAmount {
 extension BillingAmount: CustomDebugStringConvertible {
 
     var debugDescription: String {
-        debugString(subject: self, value1: amountOfMoney, value2: currency)
+        debugString(subject: self, value1: money, value2: currency)
     }
 }
 
