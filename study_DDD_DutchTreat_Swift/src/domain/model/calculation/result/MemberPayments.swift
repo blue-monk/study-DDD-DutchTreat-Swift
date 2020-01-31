@@ -39,7 +39,7 @@ extension MemberPayments {
                 .map { $0.paymentAmount }
                 .sum(in: _billingAmount.currency)
 
-        return TotalPaymentAmount(amountOfMoney: total.amountOfMoney)
+        return TotalPaymentAmount(money: total.money)
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 
 struct TotalPaymentAmount {
 
-    let amountOfMoney: AmountOfMoney
+    let money: Money
 }
 
 
@@ -18,6 +18,6 @@ struct TotalPaymentAmount {
 extension TotalPaymentAmount: CustomDebugStringConvertible {
 
     var debugDescription: String {
-        debugString(subject: self, value: amountOfMoney)
+        debugString(subject: self, value: money)
     }
 }

@@ -10,10 +10,10 @@ import Foundation
 
 struct PaymentAmount: Equatable {
 
-    var amountOfMoney: AmountOfMoney
+    let money: Money
     
     var currency: Currency {
-        amountOfMoney.currency
+        money.currency
     }
 }
 
@@ -21,15 +21,15 @@ struct PaymentAmount: Equatable {
 extension PaymentAmount {
 
     init(_ amount: Decimal, currency: Currency) {
-        amountOfMoney = AmountOfMoney(amount, currency: currency)
+        money = Money(amount, currency)
     }
 
     init(_ differenceAmount: DifferenceAmount) {
-        amountOfMoney = differenceAmount.amountOfMoney
+        money = differenceAmount.money
     }
 
-    init(_ amountOfMoney: AmountOfMoney) {
-        self.amountOfMoney = amountOfMoney
+    init(_ money: Money) {
+        self.money = money
     }
 }
 
@@ -38,12 +38,12 @@ extension PaymentAmount {
 
     func rounded(by specifiedRounding: SpecifiedRounding) -> Self {
 
-        let currency = amountOfMoney.currency
+        let currency = money.currency
         let scale = specifiedRounding.scale(for: currency)
         let roundingMode = specifiedRounding.roundingMode
-        let rounded = amountOfMoney.rounded(with: scale, and: roundingMode)
+        let rounded = money.rounded(with: scale, and: roundingMode)
 
-        return PaymentAmount(amountOfMoney: rounded)
+        return PaymentAmount(money: rounded)
     }
 }
 
@@ -56,11 +56,11 @@ extension PaymentAmount: AccumulatableMoney {
     }
 
     static func + (lhs: Self, rhs: Self) -> Self {
-        PaymentAmount(amountOfMoney: lhs.amountOfMoney + rhs.amountOfMoney)
+        PaymentAmount(money: lhs.money + rhs.money)
     }
 
 //    static func += (lhs: inout Self, rhs: Self) {
-//        lhs.amountOfMoney += rhs.amountOfMoney
+//        lhs.money += rhs.money
 //    }
 }
 
@@ -68,12 +68,12 @@ extension PaymentAmount: AccumulatableMoney {
 extension PaymentAmount {
     
     static func + (lhs: Self, rhs: DifferenceAmount) -> Self {
-        PaymentAmount(amountOfMoney: lhs.amountOfMoney + rhs.amountOfMoney)
+        PaymentAmount(money: lhs.money + rhs.money)
     }
 
-    static func += (lhs: inout Self, rhs: DifferenceAmount) {
-        lhs.amountOfMoney += rhs.amountOfMoney
-    }
+//    static func += (lhs: inout Self, rhs: DifferenceAmount) {
+//        lhs.money += rhs.money
+//    }
 
 }
 
@@ -81,7 +81,7 @@ extension PaymentAmount {
 extension PaymentAmount {
     
     static func / (lhs: Self, rhs: Weight) -> Self {
-        PaymentAmount(lhs.amountOfMoney / rhs.value)
+        PaymentAmount(lhs.money / rhs.value)
     }
 }
 
@@ -90,6 +90,6 @@ extension PaymentAmount {
 extension PaymentAmount: CustomDebugStringConvertible {
 
     var debugDescription: String {
-        debugString(subject: self, value1: amountOfMoney, value2: currency)
+        debugString(subject: self, value1: money, value2: currency)
     }
 }
