@@ -43,15 +43,6 @@ extension MemberPayments {
     }
 }
 
-//MARK: Array 拡張
-private extension Array where Element == PaymentAmount {
-
-    func sum(in currency: Currency) -> Element {
-        reduce(.zero(currency: currency), +)
-    }
-}
-
-
 //MARK: 位置算出
 extension MemberPayments {
 

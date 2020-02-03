@@ -16,3 +16,12 @@ protocol AccumulatableMoney {
 
 //    static func += (lhs: inout Self, rhs: Self)
 }
+
+
+//MARK: Sequence 拡張
+extension Sequence where Element: AccumulatableMoney {
+
+    func sum(in currency: Currency) -> Element {
+        reduce(.zero(currency: currency), +)
+    }
+}
