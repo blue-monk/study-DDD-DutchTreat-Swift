@@ -50,9 +50,9 @@ extension DrinkingParty {
 extension DrinkingParty {
 
     func splitBill(_ billingAmount: BillingAmount,
-                  _ paymentLevelSpecifics: PaymentLevelSpecifics,
-                  _ specifiedRounding: SpecifiedRounding,
-                  _ differenceAdjustmentPolicy: DifferenceAdjustmentPolicy = DifferenceAdjustmentPolicy.assignToOrganizer
+                   _ paymentLevelSpecifics: PaymentLevelSpecifics,
+                   _ specifiedRounding: SpecifiedRounding,
+                   _ differenceAdjustmentPolicy: DifferenceAdjustmentPolicy = DifferenceAdjustmentPolicy.assignToOrganizer
     ) -> MemberPayments {
 
         let calculator = DutchTreatCalculator(billingAmount, paymentLevelSpecifics, _partyMembers, specifiedRounding, differenceAdjustmentPolicy)
