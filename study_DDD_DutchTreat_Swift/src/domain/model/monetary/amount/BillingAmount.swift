@@ -28,7 +28,7 @@ extension BillingAmount {
 //MARK: Weight との演算
 extension BillingAmount {
 
-    static func * (lhs: BillingAmount, rhs: Weight) -> PaymentAmount {
+    static func * (lhs: Self, rhs: Weight) -> PaymentAmount {
         PaymentAmount(lhs.money * rhs.value)
     }
 }
@@ -36,11 +36,11 @@ extension BillingAmount {
 //MARK: TotalPaymentAmount との演算
 extension BillingAmount {
 
-    static func - (lhs: BillingAmount, rhs: TotalPaymentAmount) -> DifferenceAmount {
+    static func - (lhs: Self, rhs: TotalPaymentAmount) -> DifferenceAmount {
         DifferenceAmount(lhs.money - rhs.money)
     }
 
-    static func == (lhs: BillingAmount, rhs: TotalPaymentAmount) -> Bool {
+    static func == (lhs: Self, rhs: TotalPaymentAmount) -> Bool {
         lhs.money == rhs.money
     }
 }

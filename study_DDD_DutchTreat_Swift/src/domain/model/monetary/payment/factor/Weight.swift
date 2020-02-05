@@ -29,7 +29,7 @@ extension Weight {
 //MARK: Comparable 準拠
 extension Weight: Comparable {
 
-    static func < (lhs: Weight, rhs: Weight) -> Bool {
+    static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.value < rhs.value
     }
 }

@@ -48,7 +48,7 @@ extension MemberType {
 extension MemberType {
 
     func displayName() -> String {
-        MemberType._constants[self].displayName
+        Self._constants[self].displayName
     }
 }
 

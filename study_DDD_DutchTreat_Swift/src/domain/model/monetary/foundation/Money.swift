@@ -60,7 +60,7 @@ extension Money {
 //NOTE: 通貨と丸めモードを型パラメータにしていないので AdditiveArithmeticに準拠できない。
 extension Money {
 
-    static func + (lhs: Self, rhs: Self) -> Money {
+    static func + (lhs: Self, rhs: Self) -> Self {
 
         _checkConsistency(lhs, rhs)
         return Money(lhs.amount + rhs.amount, lhs.currency)
@@ -107,7 +107,7 @@ extension Money {
     }
 
 
-    static func *= (lhs: inout Money, rhs: Decimal) {
+    static func *= (lhs: inout Self, rhs: Decimal) {
         lhs.amount *= rhs
     }
 

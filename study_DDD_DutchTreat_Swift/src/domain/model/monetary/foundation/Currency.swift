@@ -32,11 +32,11 @@ enum Currency: CaseIterable {
 extension Currency {
 
     func code() -> String {
-        Currency._constants[self].code
+        Self._constants[self].code
     }
 
     func name() -> String {
-        Currency._constants[self].name
+        Self._constants[self].name
     }
 
     func minorUnit() -> Scale {
@@ -44,6 +44,6 @@ extension Currency {
     }
 
     func minorUnit() -> Int {
-        Currency._constants[self].minorUnit
+        Self._constants[self].minorUnit
     }
 }
