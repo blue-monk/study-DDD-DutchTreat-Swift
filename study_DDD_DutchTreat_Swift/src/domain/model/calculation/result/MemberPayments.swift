@@ -30,10 +30,10 @@ extension MemberPayments {
 extension MemberPayments {
 
     func differenceFromBillingAmount() -> DifferenceAmount {
-        _billingAmount - totalPaymentAmount();
+        _billingAmount - _totalPaymentAmount();
     }
 
-    private func totalPaymentAmount() -> TotalPaymentAmount {
+    private func _totalPaymentAmount() -> TotalPaymentAmount {
 
         let total = _rawMemberPayments
                 .map { $0.paymentAmount }

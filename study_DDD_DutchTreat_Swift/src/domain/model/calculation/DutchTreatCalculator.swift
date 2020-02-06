@@ -47,7 +47,7 @@ extension DutchTreatCalculator {
             return MemberPayment(member: member, paymentAmount: appliedPaymentAmount)
         }
 
-        return adjustDifference(in: MemberPayments(rawMemberPayments: memberPayments, billingAmount: billingAmount))
+        return _adjustDifference(in: MemberPayments(rawMemberPayments: memberPayments, billingAmount: billingAmount))
     }
 
     //MARK: 割り勘計算
@@ -63,7 +63,7 @@ extension DutchTreatCalculator {
     }
 
     //MARK: 差額調整
-    private func adjustDifference(in memberPayments: MemberPayments) -> MemberPayments {
+    private func _adjustDifference(in memberPayments: MemberPayments) -> MemberPayments {
 
         let difference = memberPayments.differenceFromBillingAmount()
         if difference.isZero() {
