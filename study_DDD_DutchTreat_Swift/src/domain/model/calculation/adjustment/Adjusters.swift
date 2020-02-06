@@ -37,13 +37,9 @@ struct RandomSacrificedAdjuster: DifferenceAdjuster {
 
     func adjust(_ difference: DifferenceAmount, in memberPayments: MemberPayments) -> MemberPayments {
 
-        let adjusted = memberPayments
-                .randomMemberPayment()?
+        let adjustedMemberPayment = memberPayments
+                .randomMemberPayment()
                 .addingPaymentAmount(difference)
-
-        guard let adjustedMemberPayment = adjusted else {
-            fatalError("パーティメンバーには少なくとも主催者はいるはず")
-        }
 
         return memberPayments.replacing(memberPayment: adjustedMemberPayment)
     }

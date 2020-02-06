@@ -19,7 +19,9 @@ extension MemberPayments {
 
     init(rawMemberPayments: [MemberPayment], billingAmount: BillingAmount) {
 
-        assert(!rawMemberPayments.isEmpty, "rawMemberPaymentsが空っぽ")
+        guard !rawMemberPayments.isEmpty else {
+            fatalError("rawMemberPaymentsが空っぽ")
+        }
 
         _rawMemberPayments = rawMemberPayments
         _billingAmount = billingAmount
@@ -78,8 +80,8 @@ extension MemberPayments {
 //MARK: ランダムに選択された MemberPayment
 extension MemberPayments {
 
-    func randomMemberPayment() -> MemberPayment? {
-        _rawMemberPayments.randomElement()
+    func randomMemberPayment() -> MemberPayment {
+        _rawMemberPayments.randomElement()!         //NOTE: 必ず主催者はいる
     }
 }
 
