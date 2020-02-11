@@ -10,7 +10,7 @@ import Foundation
 
 struct Money: Equatable, Hashable {
 
-    var amount: Decimal
+    var value: Decimal
     let currency: Currency
     let roundingMode: Decimal.RoundingMode
 }
@@ -20,7 +20,7 @@ extension Money {
 
     init(_ amount: Decimal, _ currency: Currency, roundingMode: Decimal.RoundingMode = .plain) {
 
-        self.amount = Rounder.round(amount, with: currency.minorUnit(), and: .plain)
+        self.value = Rounder.round(amount, with: currency.minorUnit(), and: .plain)
         self.currency = currency
         self.roundingMode = roundingMode
     }
@@ -35,7 +35,7 @@ extension Money {
 
     func rounded(with scale: Scale, and mode: Decimal.RoundingMode) -> Self {
 
-        let rounded = Rounder.round(amount, with: scale, and: mode)
+        let rounded = Rounder.round(value, with: scale, and: mode)
         return Money(rounded, currency)
     }
 }
@@ -44,7 +44,7 @@ extension Money {
 extension Money: Comparable {
 
     static func < (lhs: Self, rhs: Self) -> Bool {
-        lhs.amount < rhs.amount
+        lhs.value < rhs.value
     }
 }
 
@@ -63,25 +63,25 @@ extension Money {
     static func + (lhs: Self, rhs: Self) -> Self {
 
         _checkConsistency(lhs, rhs)
-        return Money(lhs.amount + rhs.amount, lhs.currency)
+        return Money(lhs.value + rhs.value, lhs.currency)
     }
 
     static func += (lhs: inout Self, rhs: Self) {
 
         _checkConsistency(lhs, rhs)
-        lhs.amount += rhs.amount
+        lhs.value += rhs.value
     }
 
     static func - (lhs: Self, rhs: Self) -> Self {
 
         _checkConsistency(lhs, rhs)
-        return Money(lhs.amount - rhs.amount, lhs.currency)
+        return Money(lhs.value - rhs.value, lhs.currency)
     }
 
     static func -= (lhs: inout Self, rhs: Self) {
 
         _checkConsistency(lhs, rhs)
-        lhs.amount -= rhs.amount
+        lhs.value -= rhs.value
     }
 }
 
@@ -90,7 +90,7 @@ extension Money {
 extension Money {
 
     static func * (lhs: Self, rhs: Decimal) -> Self {
-        Money(lhs.amount * rhs, lhs.currency)
+        Money(lhs.value * rhs, lhs.currency)
     }
 
     static func * (lhs: Self, rhs: Int) -> Self {
@@ -108,11 +108,11 @@ extension Money {
 
 
     static func *= (lhs: inout Self, rhs: Decimal) {
-        lhs.amount *= rhs
+        lhs.value *= rhs
     }
 
     static func *= (lhs: inout Self, rhs: Int) {
-        lhs.amount *= Decimal(rhs)
+        lhs.value *= Decimal(rhs)
     }
 }
 
@@ -121,7 +121,7 @@ extension Money {
 extension Money {
 
     static func / (lhs: Self, rhs: Decimal) -> Self {
-        Money(lhs.amount / rhs, lhs.currency)
+        Money(lhs.value / rhs, lhs.currency)
     }
 
     static func / (lhs: Self, rhs: Int) -> Self {
@@ -134,7 +134,7 @@ extension Money {
 extension Money {
 
     static prefix func - (money: Self) -> Self {
-        Money(-money.amount, money.currency, roundingMode: money.roundingMode)
+        Money(-money.value, money.currency, roundingMode: money.roundingMode)
     }
 }
 
@@ -143,6 +143,6 @@ extension Money {
 extension Money: CustomStringConvertible {
 
     var description: String {
-        debugString(subject: self, value1: amount, value2: currency, value3: roundingMode)
+        debugString(subject: self, value1: value, value2: currency, value3: roundingMode)
     }
 }
