@@ -13,11 +13,8 @@ struct Money: Equatable, Hashable {
     var value: Decimal
     let currency: Currency
     let roundingMode: Decimal.RoundingMode
-}
 
-//MARK: 初期化
-extension Money {
-
+    //MARK: 初期化
     init(_ amount: Decimal, _ currency: Currency, roundingMode: Decimal.RoundingMode = .plain) {
 
         self.value = Rounder.round(amount, with: currency.minorUnit(), and: .plain)
@@ -25,6 +22,8 @@ extension Money {
         self.roundingMode = roundingMode
     }
 }
+
+
 
 //MARK: 丸め処理
 extension Money {

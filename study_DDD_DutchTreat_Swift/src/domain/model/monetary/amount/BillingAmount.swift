@@ -15,15 +15,14 @@ struct BillingAmount {
     var currency: Currency {
         return money.currency
     }
-}
 
-//MARK: 初期化
-extension BillingAmount {
-
+    //MARK: 初期化
     init(_ amount: Decimal, currency: Currency) {
         money = Money(amount, currency)
     }
 }
+
+
 
 //MARK: Weight との演算
 extension BillingAmount {

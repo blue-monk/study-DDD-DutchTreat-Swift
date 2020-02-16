@@ -28,6 +28,8 @@ enum MemberType: String, CaseIterable {
     }
 }
 
+
+
 //MARK: タイプ判定
 extension MemberType {
 

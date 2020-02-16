@@ -11,15 +11,14 @@ import Foundation
 struct DifferenceAmount {
 
     let money: Money
-}
 
-//MARK: 初期化
-extension DifferenceAmount {
-
+    //MARK: 初期化
     init(_ money: Money) {
         self.money = money
     }
 }
+
+
 
 //MARK: 判定
 extension DifferenceAmount {

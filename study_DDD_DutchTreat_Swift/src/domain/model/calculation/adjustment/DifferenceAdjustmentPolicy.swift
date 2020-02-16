@@ -16,6 +16,8 @@ enum DifferenceAdjustmentPolicy: String {
     case assignRandomly
 }
 
+
+
 //MARK: 使用する DifferenceAdjuster
 extension DifferenceAdjustmentPolicy {
 

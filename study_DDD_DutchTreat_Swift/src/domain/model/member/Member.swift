@@ -15,6 +15,8 @@ struct Member: PaymentLevelHolder {
     let paymentLevel: PaymentLevel
 }
 
+
+
 //MARK: タイプ判定
 extension Member {
 

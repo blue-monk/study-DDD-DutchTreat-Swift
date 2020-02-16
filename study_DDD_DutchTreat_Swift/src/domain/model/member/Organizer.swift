@@ -11,11 +11,8 @@ import Foundation
 struct Organizer: Equatable {
     
     let substance: Member
-}
 
-//MARK: 初期化
-extension Organizer {
-
+    //MARK: 初期化
     init(name: MemberName, paymentLevel: PaymentLevel) {
         substance = Member(name: name, memberType: .partyOrganizer, paymentLevel: paymentLevel)
     }

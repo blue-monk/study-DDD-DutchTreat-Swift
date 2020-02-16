@@ -11,10 +11,6 @@ import Foundation
 struct PaymentLevelSpecifics {
 
     let weightsByLevel: [PaymentLevel : Weight]
-}
-
-//MARK: 初期化
-extension PaymentLevelSpecifics {
 
     init(moreWeight: Weight, standardWeight: Weight, lessWeight: Weight) {
 
@@ -27,6 +23,10 @@ extension PaymentLevelSpecifics {
         weightsByLevel = weightsByLevel_
         _validate()
     }
+}
+
+//MARK: バリデーション
+extension PaymentLevelSpecifics {
 
     private func _validate() {
 
@@ -38,6 +38,8 @@ extension PaymentLevelSpecifics {
         assert(standard >= less, "more, standard, less の割合の大小関係が不正です. [more=\(more), standard=\(standard), less=\(less)]");
     }
 }
+
+
 
 //MARK: Weight 取得
 extension PaymentLevelSpecifics {

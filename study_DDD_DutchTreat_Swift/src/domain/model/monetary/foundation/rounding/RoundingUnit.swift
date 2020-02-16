@@ -21,6 +21,8 @@ enum RoundingUnit: Double {
     case hundred = 100
 }
 
+
+
 //MARK: 導出情報
 extension RoundingUnit {
 

@@ -18,6 +18,7 @@ protocol AccumulatableMoney {
 }
 
 
+
 //MARK: Sequence 拡張
 extension Sequence where Element: AccumulatableMoney {
 

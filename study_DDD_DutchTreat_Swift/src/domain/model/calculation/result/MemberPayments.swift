@@ -28,6 +28,8 @@ extension MemberPayments {
     }
 }
 
+
+
 //MARK: 計算
 extension MemberPayments {
 

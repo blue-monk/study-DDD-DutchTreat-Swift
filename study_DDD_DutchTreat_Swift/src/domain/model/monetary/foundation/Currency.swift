@@ -28,6 +28,8 @@ enum Currency: CaseIterable {
     }
 }
 
+
+
 //MARK: 属性
 extension Currency {
 

@@ -13,6 +13,14 @@ struct MemberPayment: Identifiable {
     let id: UUID
     let member: Member
     let paymentAmount: PaymentAmount
+
+    //MARK: 初期化
+    private init(id: UUID, member: Member, paymentAmount: PaymentAmount) {
+
+        self.id = id
+        self.member = member
+        self.paymentAmount = paymentAmount
+    }
 }
 
 //MARK: 初期化
@@ -25,6 +33,8 @@ extension MemberPayment {
         self.paymentAmount = paymentAmount
     }
 }
+
+
 
 //MARK: 加工（non-mutating）
 extension MemberPayment {

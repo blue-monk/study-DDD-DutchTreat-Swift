@@ -15,11 +15,8 @@ struct DutchTreatCalculator {
     var partyMembers: PartyMembers
     var specifiedRounding: SpecifiedRounding
     var differenceAdjustmentPolicy = DifferenceAdjustmentPolicy.assignToOrganizer
-}
 
-//MARK: 初期化
-extension DutchTreatCalculator {
-
+    //MARK: 初期化
     init(_ billingAmount: BillingAmount,
          _ paymentLevelSpecifics: PaymentLevelSpecifics,
          _ partyMembers: PartyMembers,
@@ -33,6 +30,8 @@ extension DutchTreatCalculator {
         self.differenceAdjustmentPolicy = differenceAdjustmentPolicy
     }
 }
+
+
 
 //MARK: 割り勘計算
 extension DutchTreatCalculator {

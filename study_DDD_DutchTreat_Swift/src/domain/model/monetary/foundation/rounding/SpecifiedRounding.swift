@@ -14,6 +14,8 @@ struct SpecifiedRounding {
     let rounding: Rounding
 }
 
+
+
 //MARK: 導出情報
 extension SpecifiedRounding {
 

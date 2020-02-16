@@ -15,6 +15,11 @@ struct PaymentAmount: Equatable {
     var currency: Currency {
         money.currency
     }
+
+    //MARK: 初期化
+    init(_ money: Money) {
+        self.money = money
+    }
 }
 
 //MARK: 初期化
@@ -27,11 +32,9 @@ extension PaymentAmount {
     init(_ differenceAmount: DifferenceAmount) {
         money = differenceAmount.money
     }
-
-    init(_ money: Money) {
-        self.money = money
-    }
 }
+
+
 
 //MARK: 丸め処理
 extension PaymentAmount {
@@ -41,9 +44,9 @@ extension PaymentAmount {
         let currency = money.currency
         let scale = specifiedRounding.scale(for: currency)
         let roundingMode = specifiedRounding.roundingMode
-        let rounded = money.rounded(with: scale, and: roundingMode)
+        let roundedMoney = money.rounded(with: scale, and: roundingMode)
 
-        return PaymentAmount(money: rounded)
+        return PaymentAmount(roundedMoney)
     }
 }
 
@@ -56,7 +59,7 @@ extension PaymentAmount: AccumulatableMoney {
     }
 
     static func + (lhs: Self, rhs: Self) -> Self {
-        PaymentAmount(money: lhs.money + rhs.money)
+        PaymentAmount(lhs.money + rhs.money)
     }
 
 //    static func += (lhs: inout Self, rhs: Self) {
@@ -68,7 +71,7 @@ extension PaymentAmount: AccumulatableMoney {
 extension PaymentAmount {
     
     static func + (lhs: Self, rhs: DifferenceAmount) -> Self {
-        PaymentAmount(money: lhs.money + rhs.money)
+        PaymentAmount(lhs.money + rhs.money)
     }
 
 //    static func += (lhs: inout Self, rhs: DifferenceAmount) {

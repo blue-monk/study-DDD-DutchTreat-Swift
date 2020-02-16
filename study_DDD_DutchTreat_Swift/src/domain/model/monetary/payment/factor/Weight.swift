@@ -11,11 +11,8 @@ import Foundation
 struct Weight: Hashable {
 
     var value: Int
-}
 
-//MARK: 初期化
-extension Weight {
-
+    //MARK: 初期化
     init(_ value: Int) throws {
 
         guard value > -1 else {
@@ -25,6 +22,8 @@ extension Weight {
         self.value = value
     }
 }
+
+
 
 //MARK: Comparable 準拠
 extension Weight: Comparable {

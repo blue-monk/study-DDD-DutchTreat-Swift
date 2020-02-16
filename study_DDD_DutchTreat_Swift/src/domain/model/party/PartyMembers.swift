@@ -11,15 +11,14 @@ import Foundation
 struct PartyMembers {
 
     private var members = [Member]()
-}
 
-//MARK: 初期化
-extension PartyMembers {
-
+    //MARK: 初期化
     init(_ organizer: Organizer) {
         members.append(organizer.substance)
     }
 }
+
+
 
 //MARK: 主催者変更（mutating）
 extension PartyMembers {

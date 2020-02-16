@@ -20,11 +20,8 @@ struct DrinkingParty {
     }
 
     private var _partyMembers: PartyMembers
-}
 
-//MARK: 初期化
-extension DrinkingParty {
-
+    //MARK: 初期化
     init(partyName: PartyName, holdDateTime: HoldDateTime, organizer: Organizer) throws {
 
         self.partyName = partyName
@@ -33,6 +30,8 @@ extension DrinkingParty {
         _partyMembers = PartyMembers(organizer)
     }
 }
+
+
 
 //MARK: メンバー増減（mutating）
 extension DrinkingParty {

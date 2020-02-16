@@ -11,6 +11,10 @@ import Foundation
 struct EnumMap<Enum: CaseIterable & Hashable, Value> {
 
     private let valuesByEnum: [Enum : Value]
+}
+
+//MARK: 初期化
+extension EnumMap {
 
     init(resolver: (Enum) -> Value) {
 
@@ -22,6 +26,12 @@ struct EnumMap<Enum: CaseIterable & Hashable, Value> {
 
         self.valuesByEnum = values
     }
+}
+
+
+
+//MARK: subscript
+extension EnumMap {
 
     subscript(key: Enum) -> Value {
         return valuesByEnum[key]!             //NOTE: CaseIterable.allCases を使って初期化しているので安全
