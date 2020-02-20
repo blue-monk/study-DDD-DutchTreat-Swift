@@ -11,8 +11,10 @@ import Foundation
 
 func dateOf(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) throws -> Date {
 
-    guard let date = Calendar.gregorianDateOf(year: year, month: month, day: day) else {
-        throw DomainError.unknownDate(dateComponents: DateComponents(hour: hour, minute: minute, second: second))
+    guard let date = Calendar.gregorianDateOf(year: year, month: month, day: day, hour: hour, minute: minute, second: second) else {
+        //TODO: これは fatalErrorの方がいいのでは？
+        throw DomainError.unknownDate(dateComponents: DateComponents(year: year, month: month, day: day, hour: hour, minute: minute, second: second))
     }
+
     return date
 }
