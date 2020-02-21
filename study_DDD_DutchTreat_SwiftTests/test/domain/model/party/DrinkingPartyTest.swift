@@ -135,7 +135,7 @@ class DrinkingPartyTest: XCTestCase {
     // テストケース
     struct 割り勘計算 : TestCaseProvider {
 
-        static func Cases() -> [(DrinkingPartyTest.Factor, expect: DrinkingPartyTest.Expected)] {
+        static func cases() -> [(DrinkingPartyTest.Factor, expect: DrinkingPartyTest.Expected)] {
             割り勘計算()._cases
         }
         
@@ -197,7 +197,7 @@ class DrinkingPartyTest: XCTestCase {
 
         trace()
 
-        割り勘計算.Cases().forEach { (factor, expected) in
+        割り勘計算.cases().forEach { (factor, expected) in
 
             print("\n======== case-\(factor.caseNo) \(expected.note) ========")
             print(factor)

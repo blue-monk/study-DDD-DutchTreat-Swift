@@ -13,7 +13,7 @@ protocol TestCaseProvider {
     associatedtype DataSeed
     associatedtype Expectation
 
-    static func Cases() -> [(DataSeed, expect: Expectation)]
+    static func cases() -> [(DataSeed, expect: Expectation)]
 }
 
 protocol TestDataSeed {
